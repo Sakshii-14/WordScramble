@@ -35,7 +35,7 @@ let dots = document.querySelectorAll(".dots");
 
 function display(word) {
 
-    console.log(word);
+   
     shuffle(word);
 
     let inputboxes = document.querySelectorAll("input");
@@ -144,4 +144,5 @@ function showAlert() {
 
 function closeAlert() {
     document.getElementById('custom-alert').style.display = 'none';
+    getData();
 }
