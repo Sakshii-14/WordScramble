@@ -69,15 +69,15 @@
 </head>
 
 <body class="h-screen w-screen flex justify-center items-center">
-    <div class="bg-[#111734] min-w-[30%]  sm:min-w-[30%] h-[50%] flex flex-col px-6 py-8 rounded-2xl gap-8">
-        <img src="Word Scramblle.svg" alt="img" class="h-[5%]">
+    <div class="bg-[#111734] min-w-[30%] w-[40%] sm:min-w-[30%] h-[auto] flex flex-col px-6 py-8 rounded-2xl gap-8">
+        <img src="Word Scramblle.svg" alt="img" class="h-[1.5rem]">
         <div class="w-full sm:h-[15%] h-[10%] sm:p-4 p-2 flex justify-center items-center md:text-[2rem] sm:text-[0.75rem] text-[0.7rem]   bg-[#4A5567]  rounded-md text-[#97A3B6]"
             id="letters">
             <ul class="flex sm:gap-2 gap-1 flex-wrap justify-center items-center w-full leading-5" id="letterlist">
             </ul>
         </div>
         <div class="flex justify-center items-center flex-wrap">
-            <div class="flex items-center justify-center sm:gap-2 gap-1 flex-wrap w-[50%]">
+            <div class="flex items-center justify-center sm:gap-2 gap-1 flex-wrap w-[45%]">
                 <p class="text-[#4A5567] sm:text-[0.875rem] text-[0.75rem] font-medium p-1">Tries (<span
                         id="chance">0</span>/5):</p>
                 <div class="flex items-center justify-center gap-2 p-1">
@@ -102,10 +102,10 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-wrap justify-center items-center gap-2 sm:mt-7 sm:mb-6" id="inputbox">
-
+        <div class="flex flex-wrap justify-center items-center gap-2  md:mt-5 sm:mt-3 sm:mb-2" id="inputbox">
+            <input type="text" maxlength="1" class="sm:h-[2.7rem] sm:w-[2.7rem] h-[1.5rem] w-[1.5rem] text-[#F2F5F9] flex items-center justify-center text-center placeholder:text-center sm:text-[1.2rem] text-[0.875rem] py-[0.1rem] px-[0.26rem] font-medium outline-none rounded-lg focus:border-[#672171]  border-2 border-[#4A5567] bg-transparent placeholder:text-[#F2F5F9]" placeholder="_" disabled>
         </div>
-        <div class="flex flex-wrap justify-center items-center sm:gap-[3rem] sm:mt-2 gap-4">
+        <div class="flex flex-wrap justify-center items-center sm:gap-[1.5rem] md:mt-2 md:gap-[3.5rem] gap-3 ">
             <button
                 class="bg-[#C951E7] sm:py-3 sm:px-11 px-7 py-2 flex items-center justify-center text-[#F2F5F9] rounded-lg  hover:bg-[#e065ff] transition-all duration-100"
                 id="random">Random</button>
