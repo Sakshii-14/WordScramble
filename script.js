@@ -144,5 +144,5 @@ function showAlert() {
 
 function closeAlert() {
     document.getElementById('custom-alert').style.display = 'none';
-    getData();
+    random.click();
 }
