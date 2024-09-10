@@ -35,7 +35,7 @@ let dots = document.querySelectorAll(".dots");
 
 function display(word) {
 
-   
+    
     shuffle(word);
 
     let inputboxes = document.querySelectorAll("input");
@@ -44,15 +44,16 @@ function display(word) {
     inputboxes.forEach(elem => elem.addEventListener('input', MatchData));
     function MatchData() {
 
-        console.log(index);
-        let regex = new RegExp(`${word[index]}`, 'i');
+        
+        let regex = new RegExp(`${word[0][index]}`, 'i');
+        
         let inputvalue = this.value;
         if (inputvalue.match(regex)) {
             this.readonly = true;
             this.disabled = true;
             this.classList.replace("border-[#4A5567]", "border-[#7429C6]");
             index++;
-            if (index === word.length && chances <= 5) {
+            if (index === word[0].length && chances <= 5) {
                showAlert();
             }
             inputboxes[index].disabled = false;
@@ -69,6 +70,7 @@ function display(word) {
                 dots[chances - 1].classList.replace("bg-[#4A5567]", "bg-[#7429C6]");
             }
             else {
+
                 index = 0;
                 chances = 0;
                 chance.innerHTML = chances;
@@ -76,7 +78,8 @@ function display(word) {
                 dots.forEach(elem => elem.classList.replace("bg-[#7429C6]", "bg-[#4A5567]"))
                 let inputboxes = document.querySelectorAll("input");
                 inputboxes.forEach(elem => elem.value = '');
-                getData();
+                showloseAlert();
+               
             }
 
         }
@@ -89,11 +92,14 @@ function display(word) {
 
 
 function shuffle(word) {
-    let arr = Array.from(word);
+    
+    let arr = Array.from(word[0]);
+  
     for (let i = arr.length - 1; i >= 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+   
     let html = arr.map(elem => {
         elem = elem.toLowerCase();
         return `
@@ -142,7 +148,15 @@ function showAlert() {
     document.getElementById('custom-alert').style.display = 'block';
 }
 
+function showloseAlert() {
+    document.getElementById('lose-alert').style.display = 'block';
+}
+
 function closeAlert() {
     document.getElementById('custom-alert').style.display = 'none';
+    random.click();
+}
+function closeloseAlert() {
+    document.getElementById('lose-alert').style.display = 'none';
     random.click();
 }
